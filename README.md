@@ -2,9 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-IMPORTANT: Because of [this issue with clerk authentication](https://github.com/clerkinc/clerk-next-app-router-starter/issues/2), it is mandatory to use node version 20 (there is .nvmrc file in the root of this project).
-
-Run this to start the development server:
+First, run the development server:
 
 ```bash
 npm run dev
