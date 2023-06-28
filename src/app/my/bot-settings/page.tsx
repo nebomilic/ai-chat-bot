@@ -1,3 +1,3 @@
-const BotSettings = () => <>My Bot Settings</>
-
-export default BotSettings
+export default function Page() {
+  return <>Bot Settings</>
+}
