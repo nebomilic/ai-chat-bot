@@ -1,6 +1,6 @@
-import { RedirectToSignIn, SignOutButton, currentUser } from '@clerk/nextjs'
-import Link from 'next/link'
+import { RedirectToSignIn, currentUser } from '@clerk/nextjs'
 import { PropsWithChildren } from 'react'
+import Navigation from '@/components/Navigation'
 
 export default async function Layout({ children }: PropsWithChildren) {
   const user = await currentUser()
@@ -8,22 +8,11 @@ export default async function Layout({ children }: PropsWithChildren) {
     return <RedirectToSignIn />
   }
   return (
-    <div className="flex flex-wrap align-middle justify-center sm:mt-12">
-      <nav>
-        <ul>
-          <Link href="/my/bot-data">Bot Data</Link>
-        </ul>
-        <ul>
-          <Link href="/my/bot-integration">Bot Integration</Link>
-        </ul>
-        <ul>
-          <Link href="/my/bot-settings">Settings</Link>
-        </ul>
-        <ul>
-          <SignOutButton>Log out</SignOutButton>
-        </ul>
-      </nav>
-      {children}
-    </div>
+    <>
+      <Navigation />
+      <main className="py-10 lg:pl-72">
+        <div className="px-4 sm:px-6 lg:px-8">{children}</div>
+      </main>
+    </>
   )
 }
