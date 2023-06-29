@@ -1,12 +1,17 @@
+import { TextData } from '@/types'
 import Link from 'next/link'
-
-export default function Page() {
+async function getTextDataById(id: string) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/text-data/${id}`)
+  return res.json()
+}
+export default async function Page({ params }: { params: { id: string } }) {
+  const textData = (await getTextDataById(params.id)) as TextData
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center border-b border-gray-200 pb-5">
         <div className="sm:flex-auto">
           <h1 className="text-base font-semibold leading-6 text-gray-900">
-            Bane Kerac synopsis
+            {textData.title}
           </h1>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
@@ -21,12 +26,7 @@ export default function Page() {
       <div className="sm:mx-0">
         <div className="mt-4">
           <p className="block w-full py-1.5 text-gray-900 sm:text-sm sm:leading-6">
-            Branislav Kerac (Serbian Cyrillic: Бранислав Керац; born September
-            7, 1952, Novi Sad) is a Serbian comic book creator, known best for
-            his series Cat Claw. In the US he also published under his pseudonym
-            H.M. Baker.[2] Credits in American comics include The Black Pearl
-            and Ghost for Dark Horse Comics. He was a drummer for the heavy
-            metal band GeroMetal.
+            {textData.text}
           </p>
         </div>
       </div>
