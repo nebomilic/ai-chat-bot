@@ -5,7 +5,7 @@ export default function Page() {
     <div>
       <h1>My public page home</h1>
       <p>
-        <Link href="/my/bot-data">Go to app</Link>
+        <Link href="/my/text-data">Go to app</Link>
       </p>
     </div>
   )

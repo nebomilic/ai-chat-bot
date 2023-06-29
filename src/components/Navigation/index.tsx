@@ -18,20 +18,20 @@ import Avatar from '../Avatar'
 
 const navigation = [
   {
-    name: 'Bot Data',
-    href: '/my/bot-data',
+    name: 'Text Data',
+    href: '/my/text-data',
     icon: DocumentTextIcon,
     current: true,
   },
   {
     name: 'Integration',
-    href: '/my/bot-integration',
+    href: '/my/integration',
     icon: PuzzlePieceIcon,
     current: false,
   },
   {
     name: 'Settings',
-    href: '/my/bot-settings',
+    href: '/my/settings',
     icon: WrenchIcon,
     current: false,
   },

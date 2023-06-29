@@ -46,7 +46,7 @@ export default async function Page() {
       <div className="sm:flex sm:items-center border-b border-gray-200 pb-5">
         <div className="sm:flex-auto">
           <h1 className="text-base font-semibold leading-6 text-gray-900">
-            Bot Data
+            Textual Data
           </h1>
           <p className="mt-2 text-sm text-gray-700">
             Texts that the bot uses as the source of information.
@@ -54,7 +54,7 @@ export default async function Page() {
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
           <Link
-            href="/my/bot-data/create-new"
+            href="/my/text-data/create-new"
             className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Add text
@@ -75,7 +75,7 @@ export default async function Page() {
                     {
                       <a
                         className="text-indigo-600 hover:text-indigo-500"
-                        href="/my/bot-data/1"
+                        href="/my/text-data/1"
                       >
                         {data.title}
                       </a>
