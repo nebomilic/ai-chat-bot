@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useState } from 'react'
+import { Fragment, Suspense, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -15,6 +15,7 @@ import {
   ChevronDownIcon,
 } from '@heroicons/react/24/outline'
 import Avatar from '../Avatar'
+import { Fascinate_Inline } from 'next/font/google'
 
 const navigation = [
   {
@@ -203,7 +204,9 @@ export default function Navigation() {
                 </div>
                 <div className="ml-3">
                   <p className="text-sm font-medium text-gray-700">
-                    {user?.fullName}
+                    {user?.fullName || (
+                      <span className="block animate-pulse h-4 bg-gray-200 rounded-full dark:bg-gray-400 w-24"></span>
+                    )}
                   </p>
                   <p
                     className="text-xs font-medium text-gray-500 group-hover:text-indigo-600 cursor-pointer"
