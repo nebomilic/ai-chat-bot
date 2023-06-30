@@ -205,7 +205,7 @@ export default function Navigation() {
                 <div className="ml-3">
                   <p className="text-sm font-medium text-gray-700">
                     {user?.fullName || (
-                      <span className="block animate-pulse h-4 bg-gray-200 rounded-full dark:bg-gray-400 w-24"></span>
+                      <span className="blur">Firstname Lastname</span>
                     )}
                   </p>
                   <p
