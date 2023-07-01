@@ -251,15 +251,14 @@ export default function Navigation() {
             >
               <Menu.Items className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none">
                 <Menu.Item key="logout">
-                  <a
-                    href="javascript:void(0)"
+                  <button
                     onClick={() => signOut()}
                     className={classNames(
                       'block px-3 py-1 text-sm leading-6 text-gray-900'
                     )}
                   >
                     Logout
-                  </a>
+                  </button>
                 </Menu.Item>
               </Menu.Items>
             </Transition>

@@ -57,12 +57,9 @@ export default async function Page() {
                   <div className="mt-1 truncate text-gray-500">{data.text}</div>
                 </td>
                 <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                  <a
-                    href="javascript:void(0)"
-                    className="text-red-600 hover:text-red-500"
-                  >
+                  <button className="text-red-600 hover:text-red-500">
                     Delete<span className="sr-only">, {data.title}</span>
-                  </a>
+                  </button>
                 </td>
               </tr>
             ))}
