@@ -1,12 +1,19 @@
 import { TextData } from '@/types'
 import Link from 'next/link'
+import { autheticatedFetch } from '../utils'
 async function getTextData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/text-data`)
+  const res = await autheticatedFetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/text-data`,
+    {
+      cache: 'no-store',
+    }
+  )
+
   return res.json()
 }
 export default async function Page() {
   const textData = (await getTextData()) as TextData[]
-  // prism + api + supabase + vector db
+
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center border-b border-gray-200 pb-5">

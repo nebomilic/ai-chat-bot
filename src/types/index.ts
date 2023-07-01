@@ -3,3 +3,5 @@ export type TextData = {
   text: string
   title: string
 }
+
+export * from './supabase'
