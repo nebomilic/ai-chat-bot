@@ -1,6 +1,7 @@
 import { TextData } from '@/types'
 import Link from 'next/link'
 import { autheticatedFetch } from '../../utils'
+import DeleteButton from '@/components/DeleteButton'
 async function getTextDataById(id: string) {
   const res = await autheticatedFetch(
     `${process.env.NEXT_PUBLIC_API_URL}/text-data/${id}`,
@@ -21,12 +22,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           </h1>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-          <Link
-            href="/my/text-data/delete"
-            className="block rounded-md bg-red-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-red:outline-indigo-600"
-          >
-            Delete text
-          </Link>
+          <DeleteButton>Delete text</DeleteButton>
         </div>
       </div>
       <div className="sm:mx-0">

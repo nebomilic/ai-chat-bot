@@ -1,6 +1,7 @@
 import { TextData } from '@/types'
 import Link from 'next/link'
 import { autheticatedFetch } from '../utils'
+import DeleteButton from '@/components/DeleteButton'
 async function getTextData() {
   const res = await autheticatedFetch(
     `${process.env.NEXT_PUBLIC_API_URL}/text-data`,
@@ -57,9 +58,7 @@ export default async function Page() {
                   <div className="mt-1 truncate text-gray-500">{data.text}</div>
                 </td>
                 <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                  <button className="text-red-600 hover:text-red-500">
-                    Delete<span className="sr-only">, {data.title}</span>
-                  </button>
+                  <DeleteButton style="link">Delete</DeleteButton>
                 </td>
               </tr>
             ))}
