@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 import { getToken } from 'next-auth/jwt'
-import { NextApiRequest } from 'next'
+import { NextRequest } from 'next/server'
 
-export async function getAuthenticatedClient(request: NextApiRequest) {
+export async function getAuthenticatedClient(request: NextRequest) {
   const token = await getToken({
     req: request,
     secret: process.env.CLERK_SECRET_KEY!,
