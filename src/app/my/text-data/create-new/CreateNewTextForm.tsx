@@ -51,7 +51,7 @@ export default function CreateNewTextForm({ token }: { token: string | null }) {
             name="title"
             id="title"
             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
-            placeholder="A descriptive title for the text"
+            placeholder="Title is used only for your reference"
             required
           />
         </div>
@@ -69,7 +69,7 @@ export default function CreateNewTextForm({ token }: { token: string | null }) {
             name="text"
             id="text"
             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
-            placeholder="The chat bot will use this text to answer questions"
+            placeholder="The chat bot will use this text to answer questions, make it as detailed as possible"
             required
           />
         </div>

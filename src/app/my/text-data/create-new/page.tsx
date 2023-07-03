@@ -14,7 +14,7 @@ export default async function Page() {
             Create new text
           </h1>
           <p className="mt-2 text-sm text-gray-700">
-            Explain what this text is about.
+            Chat will use text as the source of information
           </p>
         </div>
       </div>

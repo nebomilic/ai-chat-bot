@@ -23,7 +23,7 @@ export default async function Page() {
             Textual Data
           </h1>
           <p className="mt-2 text-sm text-gray-700">
-            Texts that the bot uses as the source of information.
+            Texts that chat uses as the source of information
           </p>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
