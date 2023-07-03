@@ -1,7 +1,6 @@
 'use client'
 
 import { PropsWithChildren, useState } from 'react'
-import ConfirmationDialog from '../PopupManager/ConfirmationDialog'
 import useApplicationStore from '@/app/store'
 
 const buttonStyle =
