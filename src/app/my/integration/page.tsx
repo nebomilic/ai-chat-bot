@@ -13,7 +13,7 @@ export default function Page() {
           </p>
         </div>
       </div>
-      <div className="-mx-4 flow-root sm:mx-0 mt-4">
+      <div className="-mx-4 flow-root sm:mx-0 mt-6">
         <Chat />
       </div>
     </div>
