@@ -6,8 +6,12 @@ import { VectorDBQAChain } from 'langchain/chains'
 import { StreamingTextResponse, LangChainStream } from 'ai'
 import { CallbackManager } from 'langchain/callbacks'
 
+const promptInstruction = ''
+//   'Reply to the following question in a funny but rude manner:'
+
 export async function POST(req: Request) {
   const { prompt } = await req.json()
+  const optimizedPrompt = `${promptInstruction}${prompt}`
   const auth = {
     detectSessionInUrl: false,
     persistSession: false,
@@ -42,6 +46,6 @@ export async function POST(req: Request) {
     returnSourceDocuments: false,
   })
 
-  chain.call({ query: prompt }).catch(console.error)
+  chain.call({ query: optimizedPrompt }).catch(console.error)
   return new StreamingTextResponse(stream)
 }

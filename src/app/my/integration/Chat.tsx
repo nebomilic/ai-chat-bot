@@ -1,6 +1,7 @@
 'use client'
 
 import { useCompletion } from 'ai/react'
+import Linkify from 'linkify-react'
 export default function Chat() {
   const { completion, input, isLoading, handleInputChange, handleSubmit } =
     useCompletion({
@@ -20,7 +21,9 @@ export default function Chat() {
       <div className="mt-6">
         {completion && (
           <div className="mt-2">
-            <p className="text-sm text-gray-600">{completion}</p>
+            <Linkify as="p" className="chat">
+              {completion}
+            </Linkify>
           </div>
         )}
 
