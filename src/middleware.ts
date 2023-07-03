@@ -3,11 +3,19 @@ import { getToken } from 'next-auth/jwt'
 import { NextResponse } from 'next/server'
 
 export default authMiddleware({
-  publicRoutes: ['/', '/sign-in', '/api/text-data', '/api/text-data/:id'], // api is public since we do authenticaton in the middleware (afterAuth)
+  publicRoutes: [
+    '/',
+    '/sign-in',
+    '/api/text-data',
+    '/api/text-data/:id, /api/chat',
+  ], // api is public since we do authenticaton in the middleware (afterAuth)
   // since clerk authentication doesn't seem to work in the backend,
   // we pass the jwt in every call and validate it here
   async afterAuth(_auth, request, _event) {
-    if (request.nextUrl.pathname.startsWith('/api')) {
+    if (
+      request.nextUrl.pathname.startsWith('/api') &&
+      request.nextUrl.pathname !== '/api/chat'
+    ) {
       const token = await getToken({
         req: request,
         secret: process.env.CLERK_SECRET_KEY!,

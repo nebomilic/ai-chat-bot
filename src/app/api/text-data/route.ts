@@ -13,9 +13,6 @@ export async function POST(request: NextRequest) {
     .select()
     .single()
 
-  console.log('===> data', data)
-  console.log('===> error', error)
-
   if (!data || !data.id) {
     return NextResponse.json(
       { message: 'Error writing to database' },
@@ -29,7 +26,7 @@ export async function POST(request: NextRequest) {
     new OpenAIEmbeddings({ openAIApiKey: process.env.OPENAI_API_KEY }),
     {
       client: supabase,
-      tableName: 'text_embeddings',
+      tableName: 'documents',
     }
   )
 

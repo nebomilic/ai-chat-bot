@@ -8,7 +8,6 @@ type Payload = {
 }
 async function postTextData(data: Payload, token: string | null) {
   if (!token) {
-    console.log('===> token is null')
     return
   }
   return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/text-data`, {
