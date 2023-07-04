@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getAuthenticatedClient } from '@/app/api/utils/supabase'
+import { getAnonymousClient } from '@/app/(backend)/api/utils/supabase'
 
 // /api/text-data/:id - gets text by id
 type Context = {
@@ -9,7 +9,7 @@ type Context = {
 }
 export async function GET(request: NextRequest, context: Context) {
   const { id } = context.params
-  const supabase = await getAuthenticatedClient(request)
+  const supabase = await getAnonymousClient()
   const { data, error } = await supabase
     .from('text_data')
     .select()

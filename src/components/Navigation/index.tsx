@@ -1,10 +1,10 @@
 'use client'
 
-import { Fragment, Suspense, useState } from 'react'
+import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { SignOutButton, useUser, useClerk } from '@clerk/nextjs'
+import { useUser, useClerk } from '@clerk/nextjs'
 import { Dialog, Menu, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
@@ -12,27 +12,25 @@ import {
   PuzzlePieceIcon,
   WrenchIcon,
   XMarkIcon,
-  ChevronDownIcon,
 } from '@heroicons/react/24/outline'
 import Avatar from '../Avatar'
-import { Fascinate_Inline } from 'next/font/google'
 
 const navigation = [
   {
     name: 'Text Data',
-    href: '/my/text-data',
+    href: '/text-data',
     icon: DocumentTextIcon,
     current: true,
   },
   {
     name: 'Integration',
-    href: '/my/integration',
+    href: '/integration',
     icon: PuzzlePieceIcon,
     current: false,
   },
   {
     name: 'Settings',
-    href: '/my/settings',
+    href: '/settings',
     icon: WrenchIcon,
     current: false,
   },

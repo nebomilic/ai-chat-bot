@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getAuthenticatedClient } from '@/app/api/utils/supabase'
-import { SupabaseVectorStore } from 'langchain/vectorstores/supabase'
-import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
+import {
+  getAnonymousClient,
+  saveTextToVector,
+} from '@/app/(backend)/api/utils/supabase'
 
 // /api/text-data - creates new text
 export async function POST(request: NextRequest) {
-  const supabase = await getAuthenticatedClient(request)
+  const supabase = await getAnonymousClient()
   const requestData = await request.json()
   const { data, error } = await supabase
     .from('text_data')
@@ -20,22 +21,14 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  await SupabaseVectorStore.fromTexts(
-    [requestData.text],
-    [{ text_id: data.id }],
-    new OpenAIEmbeddings({ openAIApiKey: process.env.OPENAI_API_KEY }),
-    {
-      client: supabase,
-      tableName: 'documents',
-    }
-  )
+  await saveTextToVector(requestData.text, { text_id: data.id })
 
   return NextResponse.json(data || error)
 }
 
 // /api/text-data - gets all texts
 export async function GET(request: NextRequest) {
-  const supabase = await getAuthenticatedClient(request)
+  const supabase = await getAnonymousClient()
   const { data, error } = await supabase.from('text_data').select()
 
   return NextResponse.json(data || error)

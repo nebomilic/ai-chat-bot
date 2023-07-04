@@ -6,22 +6,18 @@ type Payload = {
   title: string
   text: string
 }
-async function postTextData(data: Payload, token: string | null) {
-  if (!token) {
-    return
-  }
+async function postTextData(data: Payload) {
   return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/text-data`, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
-      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
   })
 }
 
-export default function CreateNewTextForm({ token }: { token: string | null }) {
+export default function CreateNewTextForm() {
   const router = useRouter()
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -29,8 +25,7 @@ export default function CreateNewTextForm({ token }: { token: string | null }) {
       title: (event.target as any).title.value,
       text: (event.target as any).text.value,
     }
-    const JSONdata = JSON.stringify(data)
-    await postTextData(data, token)
+    await postTextData(data)
     // TODO: handle errors
     // TODO: show success
     // TODO: show loading

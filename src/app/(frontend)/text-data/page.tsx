@@ -1,14 +1,10 @@
 import { TextData } from '@/types'
 import Link from 'next/link'
-import { autheticatedFetch } from '../utils'
 import DeleteButton from '@/components/DeleteButton'
 async function getTextData() {
-  const res = await autheticatedFetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/text-data`,
-    {
-      cache: 'no-store',
-    }
-  )
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/text-data`, {
+    cache: 'no-store',
+  })
 
   return res.json()
 }
