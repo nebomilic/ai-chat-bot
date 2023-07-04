@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import useApplicationStore from '@/app/store'
+import useApplicationStore from '@/app/(frontend)/store'
 
 type ConfirmationDialogProps = {
   title: string

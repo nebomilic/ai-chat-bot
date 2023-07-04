@@ -1,6 +1,6 @@
 'use client'
 
-import useApplicationStore from '@/app/store'
+import useApplicationStore from '@/app/(frontend)/store'
 import DeleteTextConfirmationDialog from './DeleteTextConfirmationDialog'
 
 export default function PopupManager() {

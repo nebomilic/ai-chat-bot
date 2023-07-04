@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           </h1>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-          <DeleteButton>Delete text</DeleteButton>
+          <DeleteButton textId={textData.id}>Delete text</DeleteButton>
         </div>
       </div>
       <div className="sm:mx-0">

@@ -1,5 +1,5 @@
 export type TextData = {
-  id: string
+  id: number
   text: string
   title: string
 }

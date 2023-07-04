@@ -24,7 +24,7 @@ export default async function Page() {
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
           <Link
-            href="/my/text-data/create-new"
+            href="/text-data/create-new"
             className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Add text
@@ -45,7 +45,7 @@ export default async function Page() {
                     {
                       <a
                         className="text-indigo-600 hover:text-indigo-500"
-                        href={`/my/text-data/${data.id}`}
+                        href={`/text-data/${data.id}`}
                       >
                         {data.title}
                       </a>
@@ -54,7 +54,9 @@ export default async function Page() {
                   <div className="mt-1 truncate text-gray-500">{data.text}</div>
                 </td>
                 <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                  <DeleteButton style="link">Delete</DeleteButton>
+                  <DeleteButton style="link" textId={data.id}>
+                    Delete
+                  </DeleteButton>
                 </td>
               </tr>
             ))}

@@ -20,7 +20,9 @@ export async function GET(request: NextRequest, context: Context) {
 }
 
 // /api/text-data/:id  deletes text by id
-export async function DELETE(req: NextRequest) {
+export async function DELETE(request: NextRequest, context: Context) {
+  const { id } = context.params
+  console.log('==> id', id)
   return NextResponse.json(
     { message: 'GET: All is good!' },
     {

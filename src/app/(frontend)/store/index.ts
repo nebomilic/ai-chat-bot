@@ -1,6 +1,8 @@
 import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
 
+// TODO: cleanup
+
 type ApplicationState = {
   showConfirmationDialog: boolean
   setShowConfirmationDialog: (show: boolean) => void

@@ -29,7 +29,7 @@ export default function CreateNewTextForm() {
     // TODO: handle errors
     // TODO: show success
     // TODO: show loading
-    router.push('/my/text-data')
+    router.push('/text-data')
   }
   return (
     <form onSubmit={handleSubmit}>
