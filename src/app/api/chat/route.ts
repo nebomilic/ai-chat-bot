@@ -1,32 +1,22 @@
 import { SupabaseVectorStore } from 'langchain/vectorstores/supabase'
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
-import { createClient } from '@supabase/supabase-js'
 import { OpenAI } from 'langchain/llms/openai'
 import { VectorDBQAChain } from 'langchain/chains'
 import { StreamingTextResponse, LangChainStream } from 'ai'
 import { CallbackManager } from 'langchain/callbacks'
+import { getAnonymousClient } from '../utils/supabase'
 
 const promptInstruction = ''
-//   'Reply to the following question in a funny but rude manner:'
 
 export async function POST(req: Request) {
   const { prompt } = await req.json()
   const optimizedPrompt = `${promptInstruction}${prompt}`
-  const auth = {
-    detectSessionInUrl: false,
-    persistSession: false,
-    autoRefreshToken: false,
-  }
-  const client = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    { auth }
-  )
+  const supabase = getAnonymousClient()
 
   const vectorStore = await SupabaseVectorStore.fromExistingIndex(
     new OpenAIEmbeddings({ openAIApiKey: process.env.OPENAI_API_KEY }),
     {
-      client,
+      client: supabase,
       tableName: 'documents',
       queryName: 'match_documents',
     }

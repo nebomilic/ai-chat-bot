@@ -21,3 +21,19 @@ export async function getAuthenticatedClient(request: NextRequest) {
 
   return supabase
 }
+
+export function getAnonymousClient() {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_KEY!,
+    {
+      auth: {
+        detectSessionInUrl: false,
+        persistSession: false,
+        autoRefreshToken: false,
+      },
+    }
+  )
+
+  return supabase
+}
