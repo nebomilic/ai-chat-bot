@@ -35,7 +35,7 @@ export default function DeleteButton({
     <>
       <button
         className={style === 'button' ? buttonStyle : linkStyle}
-        onClick={() => deleteTextData(textId)}
+        onClick={() => handleDelete(textId)}
       >
         {children}
       </button>

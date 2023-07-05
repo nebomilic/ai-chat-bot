@@ -15,10 +15,10 @@ export async function POST(request: NextRequest) {
     .single()
 
   if (!data || !data.id) {
-    return NextResponse.json(
-      { message: 'Error writing to database' },
-      { status: 500 }
-    )
+    return NextResponse.json({
+      message: 'Error writing to database',
+      status: 500,
+    })
   }
 
   await saveTextToVector(requestData.text, { text_id: data.id })
