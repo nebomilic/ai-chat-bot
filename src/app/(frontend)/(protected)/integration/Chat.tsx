@@ -21,7 +21,7 @@ export default function Chat() {
       <div className="mt-6">
         {completion && (
           <div className="mt-2">
-            <Linkify as="p" className="chat">
+            <Linkify as="p" className="chat" options={{ target: '_blank' }}>
               {completion}
             </Linkify>
           </div>
