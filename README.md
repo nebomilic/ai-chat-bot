@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## What is AI ChatBot ?
 
-## Getting Started
+With this app, you can create your chatbot by providing a set of texts that the chatbot will use to generate responses.
 
-First, run the development server:
+To illustrate we will use the following example:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- We have added a couple of texts that contain car names, their value and rating
+  ![Textual Data](readme-assets/data-list.png)
+
+- Now we can ask the bot and it use all the knowledge provided to generate a response
+  ![Chat Demo](readme-assets/chat-demo.gif)
+
+## Setup
+
+This project is loosely based on [ai-getting-started](https://github.com/a16z-infra/ai-getting-started/) repo. Therefore is a part of the setup similar to the original repo.
+
+Used stack is:
+
+- [OpenAI](https://platform.openai.com/docs/models) - text generation
+- [Clerk](https://clerk.com/) - authentication
+- [Supabase](https://supabase.com/) - Database
+- [Next.js](https://nextjs.org/) - Frontend & API
+
+### 1. Install dependencies
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Fill out secrets
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+cp .env.local.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+a. **Clerk Secrets**
 
-## Learn More
+Go to https://dashboard.clerk.com/ -> "Add Application" -> Fill in Application name/select how your users should sign in -> Create Application
+Now you should see both `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` on the screen
+b. **OpenAI API key**
 
-To learn more about Next.js, take a look at the following resources:
+Visit https://platform.openai.com/account/api-keys to get your OpenAI API key
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+e. **Supabase API key**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Create a Supabase instance [here](https://supabase.com/dashboard/projects); then go to Project Settings -> API
+- `SUPABASE_URL` is the URL value under "Project URL"
+- `SUPABASE_PRIVATE_KEY` is the key starts with `ey` under Project API Keys
+- Now, you should enable pgvector on Supabase and create a schema. You can do this easily by clicking on "SQL editor" on the left hand side on supabase UI and then clicking on "+New Query". Copy paste [this code snippet](scripts/supabase.sql) in the SQL editor and click "Run".
 
-## Deploy on Vercel
+### 3. Run app locally
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Now you are ready to test out the app locally! To do this, simply run:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+npm run dev
+```
