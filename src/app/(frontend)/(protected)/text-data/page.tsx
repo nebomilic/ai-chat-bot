@@ -1,6 +1,6 @@
 import { Route, TextData } from '@/types'
 import Link from 'next/link'
-import DeleteButton from '@/components/DeleteButton'
+import DeleteButton from '@/app/(frontend)/components/DeleteButton'
 async function getTextData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/text-data`, {
     next: { revalidate: 0 },

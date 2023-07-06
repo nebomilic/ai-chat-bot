@@ -1,5 +1,5 @@
 import { TextData } from '@/types'
-import DeleteButton from '@/components/DeleteButton'
+import DeleteButton from '@/app/(frontend)/components/DeleteButton'
 async function getTextDataById(id: string) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/text-data/${id}`,

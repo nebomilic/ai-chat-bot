@@ -1,7 +1,7 @@
 import { RedirectToSignIn, currentUser } from '@clerk/nextjs'
 import { PropsWithChildren } from 'react'
-import Navigation from '@/components/Navigation'
-import PopupManager from '@/components/PopupManager'
+import Navigation from '@/app/(frontend)/components/Navigation'
+import PopupManager from '@/app/(frontend)/components/PopupManager'
 
 export default async function Layout({ children }: PropsWithChildren) {
   const user = await currentUser()
