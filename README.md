@@ -6,13 +6,13 @@ Will will illustrate this with an example.
 
 👉 We have added a couple of texts that contain car names, their value and rating:
 
-  <img src="readme-assets/data-list.png" alt="Textual Data" width="600"/>
+  <img src="readme-assets/data-list.png" style="border-radius: 0.5rem;" alt="Textual Data" width="600"/>
   </br>
   </br>
 
 👉 Now we can ask the chatbot a question and it will use all the knowledge provided to generate a response:
 
-![Chat Demo](readme-assets/chat-demo.gif)
+<img src="readme-assets/chat-demo.gif"  style="border-radius: 0.5rem;" alt="Chat Demo" width="600"/>
 
 ## Setup
 
