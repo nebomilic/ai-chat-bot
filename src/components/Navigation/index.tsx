@@ -14,23 +14,24 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import Avatar from '../Avatar'
+import { Route } from '@/types'
 
 const navigation = [
   {
     name: 'Text Data',
-    href: '/text-data',
+    href: Route.TextData,
     icon: DocumentTextIcon,
     current: true,
   },
   {
     name: 'Integration',
-    href: '/integration',
+    href: Route.Integration,
     icon: PuzzlePieceIcon,
     current: false,
   },
   {
     name: 'Settings',
-    href: '/settings',
+    href: Route.Settings,
     icon: WrenchIcon,
     current: false,
   },

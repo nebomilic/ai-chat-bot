@@ -1,9 +1,9 @@
-import { TextData } from '@/types'
+import { Route, TextData } from '@/types'
 import Link from 'next/link'
 import DeleteButton from '@/components/DeleteButton'
 async function getTextData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/text-data`, {
-    cache: 'no-store',
+    next: { revalidate: 0 },
   })
 
   return res.json()
@@ -24,7 +24,7 @@ export default async function Page() {
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
           <Link
-            href="/text-data/create-new"
+            href={Route.AddTextData}
             className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Add text
@@ -45,7 +45,7 @@ export default async function Page() {
                     {
                       <a
                         className="text-indigo-600 hover:text-indigo-500"
-                        href={`/text-data/${data.id}`}
+                        href={`${Route.TextData}/${data.id}`}
                       >
                         {data.title}
                       </a>

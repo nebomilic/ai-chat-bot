@@ -1,5 +1,6 @@
 'use client'
 
+import { Route } from '@/types'
 import { useRouter } from 'next/navigation'
 import { PropsWithChildren } from 'react'
 
@@ -29,7 +30,7 @@ export default function DeleteButton({
     // TODO: handle errors
     // TODO: show success
     // TODO: show loading
-    router.push('/text-data')
+    router.push(Route.TextData as string)
   }
   return (
     <>

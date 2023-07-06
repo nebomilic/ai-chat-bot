@@ -4,7 +4,8 @@ import { StreamingTextResponse, LangChainStream } from 'ai'
 import { CallbackManager } from 'langchain/callbacks'
 import { getVectorStore } from '../utils/supabase'
 
-const promptInstruction = ''
+const promptInstruction =
+  'You are a salesperson in a retail store. A customer walks in and asks you for help finding a product. Your replies should be kind and helpful. The customer says:'
 
 export async function POST(req: Request) {
   const { prompt } = await req.json()
@@ -22,7 +23,7 @@ export async function POST(req: Request) {
   })
 
   const chain = VectorDBQAChain.fromLLM(model, vectorStore, {
-    k: 1,
+    k: 5,
     returnSourceDocuments: false,
   })
 
