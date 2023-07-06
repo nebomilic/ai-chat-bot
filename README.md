@@ -41,11 +41,12 @@ a. **Clerk Secrets**
 
 Go to https://dashboard.clerk.com/ -> "Add Application" -> Fill in Application name/select how your users should sign in -> Create Application
 Now you should see both `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` and `CLERK_SECRET_KEY` on the screen
+
 b. **OpenAI API key**
 
 Visit https://platform.openai.com/account/api-keys to get your OpenAI API key
 
-e. **Supabase API key**
+c. **Supabase API key**
 
 - Create a Supabase instance [here](https://supabase.com/dashboard/projects); then go to Project Settings -> API
 - `SUPABASE_URL` is the URL value under "Project URL"
