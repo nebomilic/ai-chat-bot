@@ -5,7 +5,7 @@ With this app, you can create your chatbot by providing a set of texts that the 
 To illustrate we will use the following example:
 
 - We have added a couple of texts that contain car names, their value and rating
-  ![Textual Data](readme-assets/data-list.png)
+  <img src="readme-assets/data-list.png" alt="Textual Data" width="600"/>
 
 - Now we can ask the bot and it use all the knowledge provided to generate a response
   ![Chat Demo](readme-assets/chat-demo.gif)
