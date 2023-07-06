@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
 import { SupabaseVectorStore } from 'langchain/vectorstores/supabase'
+import { TableName } from '../../types'
 
 export function getAnonymousClient() {
   const supabase = createClient(
@@ -23,7 +24,7 @@ export function getVectorStore() {
     new OpenAIEmbeddings({ openAIApiKey: process.env.OPENAI_API_KEY }),
     {
       client: supabase,
-      tableName: 'documents',
+      tableName: TableName.Documents,
       queryName: 'match_documents',
     }
   )
@@ -40,7 +41,7 @@ export function saveTextToVector(
     new OpenAIEmbeddings({ openAIApiKey: process.env.OPENAI_API_KEY }),
     {
       client: supabase,
-      tableName: 'documents',
+      tableName: TableName.Documents,
     }
   )
 }

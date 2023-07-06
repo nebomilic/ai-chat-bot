@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getAnonymousClient } from '@/app/(backend)/api/utils/supabase'
+import { TableName } from '@/app/(backend)/types'
 
 // /api/text-data/:id - gets text by id
 type Context = {
@@ -11,7 +12,7 @@ export async function GET(request: NextRequest, context: Context) {
   const { id } = context.params
   const supabase = await getAnonymousClient()
   const { data, error } = await supabase
-    .from('text_data')
+    .from(TableName.TextData)
     .select()
     .eq('id', id)
     .single()
@@ -24,12 +25,12 @@ export async function DELETE(request: NextRequest, context: Context) {
   const { id } = context.params
   const supabase = await getAnonymousClient()
   const { data: textData, error: textError } = await supabase
-    .from('text_data')
+    .from(TableName.TextData)
     .delete()
     .eq('id', id)
 
   const { data: metadataData, error: metadataError } = await supabase
-    .from('documents')
+    .from(TableName.Documents)
     .delete()
     .eq('metadata->text_id', id)
 
