@@ -11,7 +11,9 @@ export default function Page() {
           </p>
         </div>
       </div>
-      <div className="-mx-4 flow-root sm:mx-0 mt-4"></div>
+      <div className="-mx-4 flow-root sm:mx-0 mt-4">
+        🚧 Under construction 🚧
+      </div>
     </div>
   )
 }
