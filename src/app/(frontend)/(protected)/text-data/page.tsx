@@ -1,4 +1,4 @@
-import { Route, TextData } from '@/types'
+import { Route, TextData } from '@/app/types'
 import Link from 'next/link'
 import DeleteButton from '@/app/(frontend)/components/DeleteButton'
 async function getTextData() {

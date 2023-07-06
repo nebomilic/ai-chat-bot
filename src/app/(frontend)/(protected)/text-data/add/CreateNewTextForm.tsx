@@ -1,6 +1,6 @@
 'use client'
 
-import { Route } from '@/types'
+import { Route } from '@/app/types'
 import { useRouter } from 'next/navigation'
 
 type Payload = {

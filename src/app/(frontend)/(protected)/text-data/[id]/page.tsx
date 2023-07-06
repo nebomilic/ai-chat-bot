@@ -1,4 +1,4 @@
-import { TextData } from '@/types'
+import { TextData } from '@/app/types'
 import DeleteButton from '@/app/(frontend)/components/DeleteButton'
 async function getTextDataById(id: string) {
   const res = await fetch(

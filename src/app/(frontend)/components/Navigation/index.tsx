@@ -14,7 +14,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import Avatar from '../Avatar'
-import { Route } from '@/types'
+import { Route } from '@/app/types'
 
 const navigation = [
   {

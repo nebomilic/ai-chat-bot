@@ -1,5 +1,5 @@
 import { authMiddleware } from '@clerk/nextjs'
-import { Route } from './types'
+import { Route } from './app/types'
 
 export default authMiddleware({
   publicRoutes: [Route.SignIn, `${Route.Api}/(.*)`],
