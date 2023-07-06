@@ -2,13 +2,17 @@
 
 With this app, you can create your chatbot by providing a set of texts that the chatbot will use to generate responses.
 
-To illustrate we will use the following example:
+Will will illustrate this with an example.
 
-- We have added a couple of texts that contain car names, their value and rating
+👉 We have added a couple of texts that contain car names, their value and rating:
+
   <img src="readme-assets/data-list.png" alt="Textual Data" width="600"/>
+  </br>
+  </br>
 
-- Now we can ask the bot and it use all the knowledge provided to generate a response
-  ![Chat Demo](readme-assets/chat-demo.gif)
+👉 Now we can ask the chatbot a question and it will use all the knowledge provided to generate a response:
+
+![Chat Demo](readme-assets/chat-demo.gif)
 
 ## Setup
 
